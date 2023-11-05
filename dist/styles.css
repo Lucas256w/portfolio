@@ -183,6 +183,7 @@ input[type="checkbox"]{
     overflow: hidden;
     cursor: pointer;
     transition: ease-in 0.5s;
+    z-index: 2;
 }
 
 input[type="checkbox"]:checked ~ .check{
@@ -295,11 +296,17 @@ button:hover{
 
 /* ABOUT */
 
-.about-section{
+section{
     padding: 50px 150px;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
-.about-title{
+section.introduction{
+    opacity: 1;
+}
+
+.section-title{
     font-size: 2rem;
     margin-bottom: var(--spacing-md);
 }
@@ -330,3 +337,53 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+
+/* PROJECTS */
+
+
+
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    gap: var(--spacing-lg);
+}
+
+.project{
+    border: 1px solid var(--grey);
+    border-radius: var(--border-radius);
+    box-shadow: 2.5px 2.5px 1px var(--grey);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.project-image{
+    height: 200px;
+    width: auto;
+}
+
+.project-description,
+.project-name-and-links
+{
+    padding: 0 var(--spacing-md);
+}
+
+.project-name-and-links{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.svg-icons{
+    height: 20px;
+}
+

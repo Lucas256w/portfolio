@@ -2,6 +2,7 @@ class UI {
   static activateUi() {
     this.activateDarkmodeToggle();
     this.activateNavBar();
+    this.loadSections();
   }
 
   static activateDarkmodeToggle() {
@@ -22,6 +23,30 @@ class UI {
     const aboutSection = document.querySelector(".about-section");
     about.addEventListener("click", () => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  static loadSections() {
+    const sections = document.querySelectorAll("section");
+
+    const options = {
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+        } else {
+          entry.target.style.opacity = 0;
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      if (!section.classList.contains("introduction")) {
+        observer.observe(section);
+      }
     });
   }
 }
