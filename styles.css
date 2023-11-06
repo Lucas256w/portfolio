@@ -343,6 +343,11 @@ section.introduction{
     justify-content: center;
 }
 
+
+caption{
+    font-size: 1.5rem;
+}
+
 /* PROJECTS */
 
 
@@ -452,9 +457,38 @@ a{
 
 /* MEDIA */
 
+@media (max-width: 1000px){
+    .projects-container{
+        grid-template-columns: 250px 250px;
+    }
+
+
+    .section-title{
+        text-align: center;
+    }
+    
+}
+
 @media (max-width: 600px){
     section{
         padding: 16px;
+    }
+
+    body{
+        position: relative;
+    }
+
+    header{
+        padding: 16px;
+        justify-content: space-between;
+    }
+
+    .nav-bar{
+        position: static;
+    }
+
+    #dark-mode-toggle{
+        padding-right: 16px;
     }
 
     .title:nth-child(1),
@@ -482,6 +516,10 @@ a{
     .about-content{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+
+    table{
+        margin-top: var(--spacing-md);
     }
 
     .projects-container{
