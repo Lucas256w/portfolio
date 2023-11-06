@@ -2,7 +2,7 @@ class UI {
   static activateUi() {
     this.activateDarkmodeToggle();
     this.activateNavBar();
-    // this.loadSections();
+    this.loadSections();
   }
 
   static activateDarkmodeToggle() {
@@ -68,7 +68,7 @@ class UI {
     const sections = document.querySelectorAll("section");
 
     const options = {
-      threshold: 0.5,
+      threshold: 0.2,
     };
 
     const observer = new IntersectionObserver((entries) => {
