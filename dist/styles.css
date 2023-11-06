@@ -356,11 +356,17 @@ section.introduction{
     box-shadow: 2.5px 2.5px 1px var(--grey);
     display: flex;
     flex-direction: column;
-    background-color: var(--white);
-    color: var(--black);
+    /* background-color: var(--white);
+    color: var(--black); */
+}
+
+.svg-icons.dark{
+    fill: var(--white);
 }
 
 .project-image{
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
     height: 200px;
     width: auto;
 }
@@ -387,3 +393,40 @@ section.introduction{
     height: 20px;
 }
 
+/* CONTACT */
+
+.contact-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.email{
+    display: flex;
+    align-items: center;
+}
+
+#email-icon.dark{
+    fill: var(--white);
+}
+
+
+#github-icon,
+#linkedin-icon{
+    height: 20px;
+}
+
+
+
+#github-icon.dark > g{
+    fill: white;
+}
+
+#linkedin-icon.dark > g{
+    fill: white;
+}
+
+a{
+    color: inherit;
+}
