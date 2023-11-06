@@ -115,7 +115,7 @@ body {
 }
 
 body.dark{
-    background-color: black;
+    background-color: rgb(19, 19, 19);
 }
 
 /* CONTENT */
@@ -165,7 +165,7 @@ header{
 
 #dark-mode-toggle{
     margin-left: auto;
-    margin-right: var(--spacing-sm);
+    margin-right: var(--spacing-lg);
 }
 
 input[type="checkbox"]{
@@ -271,9 +271,13 @@ button:hover{
 
 .title-text-one{
     animation: slide-up 1s ease ;
+    font-weight: 200;
+    text-decoration: underline;
 }
 .title-text-two{
+    font-weight: 200;
     animation: slide-up 1s ease .05s;
+    text-decoration: underline;
 }
 .title-text-three{
     font-weight: 600;
@@ -298,8 +302,8 @@ button:hover{
 
 section{
     padding: 50px 150px;
-    opacity: 0;
-    transition: opacity 1s;
+    /* opacity: 0; */
+    /* transition: opacity 1s; */
 }
 
 section.introduction{
@@ -309,6 +313,7 @@ section.introduction{
 .section-title{
     font-size: 2rem;
     margin-bottom: var(--spacing-md);
+    text-decoration: underline;
 }
 
 .about-content{
@@ -344,8 +349,8 @@ section.introduction{
 
 .projects-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
     justify-items: center;
     gap: var(--spacing-lg);
 }
@@ -356,8 +361,22 @@ section.introduction{
     box-shadow: 2.5px 2.5px 1px var(--grey);
     display: flex;
     flex-direction: column;
-    /* background-color: var(--white);
-    color: var(--black); */
+    transition: transform 0.5s;
+
+}
+
+.project:hover{
+    transform: perspective(1000px) translateZ(40px);
+}
+
+@keyframes bring-forth{
+    0%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(50px);
+    }
 }
 
 .svg-icons.dark{
@@ -367,8 +386,8 @@ section.introduction{
 .project-image{
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
-    height: 200px;
-    width: auto;
+    width: 250px;
+    height: auto;
 }
 
 .project-description,
@@ -430,3 +449,49 @@ section.introduction{
 a{
     color: inherit;
 }
+
+/* MEDIA */
+
+@media (max-width: 600px){
+    section{
+        padding: 16px;
+    }
+
+    .title:nth-child(1),
+    .title:nth-child(2),
+    .title:nth-child(3),
+    .title:nth-child(4){
+        margin-left: 0;
+    }
+    
+    .title{
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .section-title{
+        text-align: center;
+    }
+
+    .title-container{
+        font-size: 1rem;
+        border-bottom: 1px solid var(--grey);
+    
+    }
+
+    .about-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .projects-container{
+        grid-template-columns: 250px;
+    }
+
+    .contact-description{
+        text-align: center;
+    }
+
+    
+}
+

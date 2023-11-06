@@ -2,7 +2,7 @@ class UI {
   static activateUi() {
     this.activateDarkmodeToggle();
     this.activateNavBar();
-    this.loadSections();
+    // this.loadSections();
   }
 
   static activateDarkmodeToggle() {
