@@ -68,7 +68,7 @@ class UI {
     const sections = document.querySelectorAll("section");
 
     const options = {
-      threshold: 0.2,
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
